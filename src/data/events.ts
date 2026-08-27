@@ -1,0 +1,1 @@
+export const events=[{slug:'bda-open-festival',title:'BDA OPEN FESTIVAL',date:'3–4 октября',kind:'Ближайшее событие',description:'Информационная отметка клубного календаря без коммерческих призывов.'}];

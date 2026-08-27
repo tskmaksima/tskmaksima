@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "npm run build && python3 -m http.server 4173 -d dist",
+    "build": "rm -rf dist && tsc && cp -r public/* dist/ && cp -r src/styles dist/assets/styles && sed 's#/src/main.ts#/assets/main.js#; s#/src/styles/global.css#/assets/styles/global.css#' index.html > dist/index.html && for r in about coach athletes achievements events gallery club-life history contacts; do mkdir -p dist/$r && cp dist/index.html dist/$r/index.html; done",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {},
+  "private": true,
+  "type": "module"
+}
