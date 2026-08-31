@@ -96,3 +96,10 @@ html.js .image-reveal.visible { clip-path: inset(0); }
 
 /* Keep the coach's face in the hero composition. */
 .coach-hero .hero-image img { object-position: center 12%; }
+
+/* Keep each athlete photograph aligned with the corresponding surname and results. */
+@media (min-width: 561px) and (max-width: 900px) {
+  .athlete-profile { grid-template-columns: 60px minmax(220px, .8fr) 1fr; }
+  .athlete-profile .image-frame { grid-column: 2; grid-row: 1 / span 2; height: 310px; }
+  .athlete-profile > div:last-child { grid-column: 3; grid-row: 1; }
+}
