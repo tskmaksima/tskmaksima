@@ -93,3 +93,6 @@ html.js .image-reveal.visible { clip-path: inset(0); }
   .about-athletes-grid { grid-template-columns: 1fr; gap: 12px; }
   .about-athletes-grid .image-frame { height: auto; aspect-ratio: 4 / 5; }
 }
+
+/* Keep the coach's face in the hero composition. */
+.coach-hero .hero-image img { object-position: center 12%; }
