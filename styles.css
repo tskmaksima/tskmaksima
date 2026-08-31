@@ -63,3 +63,14 @@ html.js .image-reveal.visible { clip-path: inset(0); }
   .footer-logo { width: 64px; margin-top: 28px; }
   .contacts { min-height: 76svh; }
 }
+
+/* Primary index portraits are intentionally never hidden behind a reveal state. */
+.homepage-photo { display: block; clip-path: none !important; opacity: 1 !important; transform: none !important; }
+.homepage-photo img { opacity: 1; object-position: center 24%; }
+.homepage-couple img { object-position: center 18%; }
+.homepage-alexandra img { object-position: center 18%; }
+@media (max-width: 700px) {
+  .homepage-photo { aspect-ratio: 4 / 5; min-height: 0; }
+  .homepage-coach { aspect-ratio: 3 / 4; }
+  .homepage-couple, .homepage-alexandra { aspect-ratio: 4 / 5; }
+}
