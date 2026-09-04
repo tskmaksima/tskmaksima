@@ -69,8 +69,37 @@ html.js .image-reveal.visible { clip-path: inset(0); }
 .homepage-photo img { opacity: 1; object-position: center 24%; }
 .homepage-couple img { object-position: center 18%; }
 .homepage-alexandra img { object-position: center 18%; }
+
+/* Page-specific editorial layouts keep portrait subjects visible without oversized gaps. */
+.coach-portrait { height: clamp(540px, 58vw, 820px); }
+.coach-portrait img { object-position: center 14%; }
+.coach-family-section { padding-block: clamp(58px, 7vw, 100px); }
+.coach-family { display: grid; grid-template-columns: minmax(260px, .72fr) 1fr; gap: clamp(28px, 7vw, 120px); align-items: end; margin: 0; }
+.coach-family .image-frame { height: min(60vw, 760px); }
+.coach-family figcaption { padding-bottom: clamp(12px, 4vw, 54px); }
+.coach-family figcaption p { margin-bottom: 0; }
+.about-athletes { padding-block: clamp(58px, 7vw, 100px); }
+.about-athletes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.about-athletes-grid .image-frame { height: clamp(300px, 31vw, 460px); }
+.about-athletes-grid img { object-position: center 22%; }
 @media (max-width: 700px) {
   .homepage-photo { aspect-ratio: 4 / 5; min-height: 0; }
   .homepage-coach { aspect-ratio: 3 / 4; }
   .homepage-couple, .homepage-alexandra { aspect-ratio: 4 / 5; }
+  .coach-portrait { height: auto; aspect-ratio: 3 / 4; }
+  .coach-family { grid-template-columns: 1fr; gap: 22px; }
+  .coach-family .image-frame { height: auto; aspect-ratio: 3 / 4; }
+  .coach-family figcaption { padding-bottom: 0; }
+  .about-athletes-grid { grid-template-columns: 1fr; gap: 12px; }
+  .about-athletes-grid .image-frame { height: auto; aspect-ratio: 4 / 5; }
+}
+
+/* Keep the coach's face in the hero composition. */
+.coach-hero .hero-image img { object-position: center 12%; }
+
+/* Keep each athlete photograph aligned with the corresponding surname and results. */
+@media (min-width: 561px) and (max-width: 900px) {
+  .athlete-profile { grid-template-columns: 60px minmax(220px, .8fr) 1fr; }
+  .athlete-profile .image-frame { grid-column: 2; grid-row: 1 / span 2; height: 310px; }
+  .athlete-profile > div:last-child { grid-column: 3; grid-row: 1; }
 }
